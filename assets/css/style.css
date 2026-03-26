@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&family=Comic+Neue:wght@700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: glow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dark .hero-glow {
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.floating-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating-3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Feature Badges */
+.feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.feature-badge:hover {
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.4);
+  transform: translateY(-2px);
+}
+
+.dark .feature-badge {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(249, 115, 22, 0.3);
+  color: #e2e8f0;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: white;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.dark .feature-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark .feature-card:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 16px;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+/* Template Card Enhancements */
+.template-card {
+  transition: all 0.3s ease;
+}
+
+.template-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.template-card.border-orange-500 {
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+/* PREVIEW DOCUMENT STYLES */
+#documentPreview {
+  min-height: 297mm;
+  width: 210mm;
+  background-color: white !important;
+  color: black !important;
+  padding: 25mm;
+  font-family: 'Urbanist', sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+}
+
+#documentPreview * {
+  color: inherit;
+}
+
+#documentPreview img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Force List Reset */
+#documentPreview ul {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  list-style-type: none !important;
+}
+
+@media (max-width: 850px) {
+  #documentPreview {
+    transform: scale(0.5);
+    transform-origin: top left;
+    margin-bottom: -50%;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .floating-element {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #documentPreview {
+    transform: scale(0.35);
+    margin-bottom: -65%;
+  }
+}
+
+/* Print Specifics */
+.document-title {
+  font-size: 28pt;
+  font-weight: bold;
+  color: #f97316 !important;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.course-title {
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.info-list {
+  margin: 30px 0;
+}
+
+.info-list li {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+  list-style: none;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.submission-table {
+  width: 100%;
+  margin-top: 40px;
+  border-collapse: collapse;
+}
+
+.submission-table thead td {
+  color: #ea580c !important;
+  font-size: 16pt;
+  font-weight: bold;
+  padding-bottom: 10px;
+  width: 50%;
+  vertical-align: top !important;
+}
+
+/* Vertical Alignment for Independent Columns */
+.submission-cell {
+  font-size: 12pt;
+  vertical-align: top !important;
+  padding-right: 10px;
+  padding-top: 0 !important;
+  line-height: 1.3;
+}
